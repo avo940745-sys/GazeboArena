@@ -32,7 +32,7 @@ def test_rescue_geometry_and_interfaces_preserved(tmp_path):
     assert len(bot.findall("plugin")) == 4
     assert float(bot.findtext("plugin[@name='ignition::gazebo::systems::DiffDrive']/wheel_separation")) == .13
     assert after.findtext("physics/max_step_size") == "0.001"
-    assert "weights" not in (path/"scene.json").read_text()
+    assert "weights" not in (path/"scene.json").read_text(encoding="utf-8")
     assert validate_world(path/"world.sdf")["resources"] == "passed"
 
 
@@ -92,7 +92,7 @@ def test_robot_pose_override_leaves_link_geometry(tmp_path):
 
 def test_bridge_world_names_and_no_truth_topic(tmp_path):
     scene=make_preset("obstacles"); scene.name="custom_arena"
-    yaml=(export_scene(scene,tmp_path,True)/"bridge.yaml").read_text()
+    yaml=(export_scene(scene,tmp_path,True)/"bridge.yaml").read_text(encoding="utf-8")
     assert "/world/custom_arena/stats" in yaml
     assert "/world/custom_arena/model/rescue_bot/link/left_fork" in yaml
     assert "pose/info" not in yaml
@@ -105,8 +105,8 @@ def test_ramp_and_stairs_real_geometry(tmp_path):
     ramp=root.find("world/model[@name='ramp_1']")
     assert ramp.findtext("link/collision/geometry/mesh/uri") == ramp.findtext("link/visual/geometry/mesh/uri")
     mesh=path/"models/arena_meshes/ramp_1.obj"
-    assert len([x for x in mesh.read_text().splitlines() if x.startswith("v ")]) == 6
-    assert len([x for x in mesh.read_text().splitlines() if x.startswith("f ")]) == 8
+    assert len([x for x in mesh.read_text(encoding="utf-8").splitlines() if x.startswith("v ")]) == 6
+    assert len([x for x in mesh.read_text(encoding="utf-8").splitlines() if x.startswith("f ")]) == 8
     stairs=root.find("world/model[@name='stairs_1']")
     assert len(stairs.findall("link/collision")) == 4
 
