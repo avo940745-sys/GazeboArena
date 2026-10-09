@@ -17,7 +17,7 @@
 
 ## Quick start
 
-Python 3.10+ is required. Windows supports editing/export; simulation targets Ubuntu 22.04 and Gazebo Fortress.
+The core requires Python 3.10+. The pinned PySide6 editor supports Python 3.10–3.13; Python 3.10 is recommended. Windows supports editing/export; simulation targets Ubuntu 22.04 and Gazebo Fortress. The installers select Python 3.10 when `uv` is available.
 
 ```bash
 git clone https://github.com/avo940745-sys/GazeboArena.git

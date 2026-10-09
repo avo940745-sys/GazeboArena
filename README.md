@@ -20,7 +20,7 @@
 
 ## 快速开始
 
-需要 Python 3.10 或更高版本。Ubuntu 22.04 + Gazebo Fortress 是仿真验收环境；Windows 支持编辑与导出。
+核心命令需要 Python 3.10+；本版 PySide6 图形界面使用 Python 3.10–3.13，推荐 3.10。Ubuntu 22.04 + Gazebo Fortress 是仿真验收环境；Windows 支持编辑与导出。
 
 ```bash
 git clone https://github.com/avo940745-sys/GazeboArena.git
@@ -33,7 +33,7 @@ python -m pip install -e '.[gui]'
 gazeboarena edit
 ```
 
-或使用 `bash install.sh` / PowerShell `./install.ps1` 安装后启动。
+或使用 `bash install.sh` / PowerShell `./install.ps1` 安装后启动。有 `uv` 时，脚本自动选择 Python 3.10。
 
 ```bash
 # 导出完整救援场景和可选桥接配置

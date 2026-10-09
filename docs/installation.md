@@ -2,7 +2,7 @@
 
 ## Windows：编辑与导出
 
-安装 Python 3.10+，在仓库根目录运行：
+安装 Python 3.10–3.13（推荐 3.10），在仓库根目录运行：
 
 ```powershell
 python -m venv .venv
@@ -10,7 +10,7 @@ python -m venv .venv
 .\.venv\Scripts\gazeboarena.exe edit
 ```
 
-也可运行 `./install.ps1`。使用虚拟环境中的完整命令路径，无需改变 PowerShell 执行策略。导出后，将完整目录复制到 Ubuntu。Windows 上不会尝试启动 Gazebo 或建立 SSH 连接。
+也可运行 `./install.ps1`。有 `uv` 时，脚本创建 Python 3.10 环境并通过 uv 安装；否则使用当前受支持的 Python。已有虚拟环境会保留，不自动删除或覆盖其 Python 版本。使用虚拟环境中的完整命令路径，无需激活脚本。导出后，将完整目录复制到 Ubuntu。Windows 上不会尝试启动 Gazebo 或建立 SSH 连接。
 
 ## Ubuntu 22.04：完整使用
 
