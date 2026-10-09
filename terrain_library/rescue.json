@@ -1,0 +1,952 @@
+{
+  "version": 1,
+  "name": "rescue_2027",
+  "length": 3.0,
+  "width": 3.0,
+  "physics_step": 0.001,
+  "description": "智能救援近似场景；机器人非原 CAD 导出，部分尺寸/物理参数为仿真假设。入口坡面仅视觉，无碰撞。",
+  "objects": [
+    {
+      "name": "floor",
+      "kind": "box",
+      "label": "floor",
+      "pose": [
+        0.0,
+        0.0,
+        -0.015,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 3.0,
+        "width": 3.0,
+        "height": 0.03
+      },
+      "color": "0.90 0.90 0.88 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "floor",
+      "source": null
+    },
+    {
+      "name": "fence_north",
+      "kind": "box",
+      "label": "fence_north",
+      "pose": [
+        0.0,
+        1.49,
+        0.04,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 3.0,
+        "width": 0.018,
+        "height": 0.08
+      },
+      "color": "0.42 0.42 0.42 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "fence_north",
+      "source": null
+    },
+    {
+      "name": "fence_south",
+      "kind": "box",
+      "label": "fence_south",
+      "pose": [
+        0.0,
+        -1.49,
+        0.04,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 3.0,
+        "width": 0.018,
+        "height": 0.08
+      },
+      "color": "0.42 0.42 0.42 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "fence_south",
+      "source": null
+    },
+    {
+      "name": "fence_east",
+      "kind": "box",
+      "label": "fence_east",
+      "pose": [
+        1.49,
+        0.0,
+        0.04,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.018,
+        "width": 3.0,
+        "height": 0.08
+      },
+      "color": "0.42 0.42 0.42 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "fence_east",
+      "source": null
+    },
+    {
+      "name": "fence_west",
+      "kind": "box",
+      "label": "fence_west",
+      "pose": [
+        -1.49,
+        0.0,
+        0.04,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.018,
+        "width": 3.0,
+        "height": 0.08
+      },
+      "color": "0.42 0.42 0.42 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "fence_west",
+      "source": null
+    },
+    {
+      "name": "start_1",
+      "kind": "box",
+      "label": "start_1",
+      "pose": [
+        -1.35,
+        1.35,
+        0.0008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.29,
+        "height": 0.0016
+      },
+      "color": "0.86 0.04 0.54 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "start_1",
+      "source": null
+    },
+    {
+      "name": "bump_1_0",
+      "kind": "box",
+      "label": "bump_1_0",
+      "pose": [
+        -1.35,
+        1.1500000000000001,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_1_0",
+      "source": null
+    },
+    {
+      "name": "bump_1_1",
+      "kind": "box",
+      "label": "bump_1_1",
+      "pose": [
+        -1.35,
+        1.1,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_1_1",
+      "source": null
+    },
+    {
+      "name": "bump_1_2",
+      "kind": "box",
+      "label": "bump_1_2",
+      "pose": [
+        -1.35,
+        1.05,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_1_2",
+      "source": null
+    },
+    {
+      "name": "start_2",
+      "kind": "box",
+      "label": "start_2",
+      "pose": [
+        1.35,
+        1.35,
+        0.0008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.29,
+        "height": 0.0016
+      },
+      "color": "0.86 0.04 0.54 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "start_2",
+      "source": null
+    },
+    {
+      "name": "bump_2_0",
+      "kind": "box",
+      "label": "bump_2_0",
+      "pose": [
+        1.35,
+        1.1500000000000001,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_2_0",
+      "source": null
+    },
+    {
+      "name": "bump_2_1",
+      "kind": "box",
+      "label": "bump_2_1",
+      "pose": [
+        1.35,
+        1.1,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_2_1",
+      "source": null
+    },
+    {
+      "name": "bump_2_2",
+      "kind": "box",
+      "label": "bump_2_2",
+      "pose": [
+        1.35,
+        1.05,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_2_2",
+      "source": null
+    },
+    {
+      "name": "start_3",
+      "kind": "box",
+      "label": "start_3",
+      "pose": [
+        -1.35,
+        -1.35,
+        0.0008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.29,
+        "height": 0.0016
+      },
+      "color": "0.86 0.04 0.54 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "start_3",
+      "source": null
+    },
+    {
+      "name": "bump_3_0",
+      "kind": "box",
+      "label": "bump_3_0",
+      "pose": [
+        -1.35,
+        -1.1500000000000001,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_3_0",
+      "source": null
+    },
+    {
+      "name": "bump_3_1",
+      "kind": "box",
+      "label": "bump_3_1",
+      "pose": [
+        -1.35,
+        -1.1,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_3_1",
+      "source": null
+    },
+    {
+      "name": "bump_3_2",
+      "kind": "box",
+      "label": "bump_3_2",
+      "pose": [
+        -1.35,
+        -1.05,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_3_2",
+      "source": null
+    },
+    {
+      "name": "start_4",
+      "kind": "box",
+      "label": "start_4",
+      "pose": [
+        1.35,
+        -1.35,
+        0.0008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.29,
+        "height": 0.0016
+      },
+      "color": "0.86 0.04 0.54 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "start_4",
+      "source": null
+    },
+    {
+      "name": "bump_4_0",
+      "kind": "box",
+      "label": "bump_4_0",
+      "pose": [
+        1.35,
+        -1.1500000000000001,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_4_0",
+      "source": null
+    },
+    {
+      "name": "bump_4_1",
+      "kind": "box",
+      "label": "bump_4_1",
+      "pose": [
+        1.35,
+        -1.1,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_4_1",
+      "source": null
+    },
+    {
+      "name": "bump_4_2",
+      "kind": "box",
+      "label": "bump_4_2",
+      "pose": [
+        1.35,
+        -1.05,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.33 0.33 0.33 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "bump_4_2",
+      "source": null
+    },
+    {
+      "name": "blue_material",
+      "kind": "box",
+      "label": "blue_material",
+      "pose": [
+        0.155,
+        -1.29,
+        0.0009,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.30000000000000004,
+        "height": 0.0018
+      },
+      "color": "0.03 0.18 0.80 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "blue_material",
+      "source": null
+    },
+    {
+      "name": "blue_casualty",
+      "kind": "box",
+      "label": "blue_casualty",
+      "pose": [
+        -0.155,
+        -1.29,
+        0.0009,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.30000000000000004,
+        "height": 0.0018
+      },
+      "color": "0.03 0.18 0.80 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "blue_casualty",
+      "source": null
+    },
+    {
+      "name": "red_material",
+      "kind": "box",
+      "label": "red_material",
+      "pose": [
+        -0.155,
+        1.29,
+        0.0009,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.30000000000000004,
+        "height": 0.0018
+      },
+      "color": "0.78 0.04 0.05 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "red_material",
+      "source": null
+    },
+    {
+      "name": "red_casualty",
+      "kind": "box",
+      "label": "red_casualty",
+      "pose": [
+        0.155,
+        1.29,
+        0.0009,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.29,
+        "width": 0.30000000000000004,
+        "height": 0.0018
+      },
+      "color": "0.78 0.04 0.05 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "red_casualty",
+      "source": null
+    },
+    {
+      "name": "blue_divider",
+      "kind": "box",
+      "label": "blue_divider",
+      "pose": [
+        0.0,
+        -1.29,
+        0.026,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.02,
+        "width": 0.3,
+        "height": 0.052
+      },
+      "color": "0.40 0.08 0.68 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "blue_divider",
+      "source": null
+    },
+    {
+      "name": "blue_entry_ramp",
+      "kind": "box",
+      "label": "blue_entry_ramp",
+      "pose": [
+        0.0,
+        -1.1099999999999999,
+        0.001,
+        -0.015,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.6,
+        "width": 0.06,
+        "height": 0.001
+      },
+      "color": "0.40 0.08 0.68 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "blue_entry_ramp",
+      "source": null
+    },
+    {
+      "name": "red_divider",
+      "kind": "box",
+      "label": "red_divider",
+      "pose": [
+        0.0,
+        1.29,
+        0.026,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.02,
+        "width": 0.3,
+        "height": 0.052
+      },
+      "color": "0.40 0.08 0.68 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "red_divider",
+      "source": null
+    },
+    {
+      "name": "red_entry_ramp",
+      "kind": "box",
+      "label": "red_entry_ramp",
+      "pose": [
+        0.0,
+        1.1099999999999999,
+        0.001,
+        0.015,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.6,
+        "width": 0.06,
+        "height": 0.001
+      },
+      "color": "0.40 0.08 0.68 1",
+      "collision": false,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": "red_entry_ramp",
+      "source": null
+    },
+    {
+      "name": "normal_1",
+      "kind": "box",
+      "label": "normal_1",
+      "pose": [
+        0.65,
+        -0.25,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.04,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.07 0.68 0.18 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.035,
+      "friction": null,
+      "template": "normal_1",
+      "source": null
+    },
+    {
+      "name": "normal_2",
+      "kind": "box",
+      "label": "normal_2",
+      "pose": [
+        -0.5,
+        0.12,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.04,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.07 0.68 0.18 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.035,
+      "friction": null,
+      "template": "normal_2",
+      "source": null
+    },
+    {
+      "name": "core_1",
+      "kind": "core",
+      "label": "core_1",
+      "pose": [
+        -0.21,
+        0.35,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "scale": 1.0
+      },
+      "color": "0.025 0.025 0.035 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.025,
+      "friction": null,
+      "template": "core_1",
+      "source": null
+    },
+    {
+      "name": "core_2",
+      "kind": "core",
+      "label": "core_2",
+      "pose": [
+        0.3,
+        0.45,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "scale": 1.0
+      },
+      "color": "0.025 0.025 0.035 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.025,
+      "friction": null,
+      "template": "core_2",
+      "source": null
+    },
+    {
+      "name": "casualty_1",
+      "kind": "box",
+      "label": "casualty_1",
+      "pose": [
+        -0.95,
+        0.68,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.08,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.98 0.32 0.02 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.055,
+      "friction": null,
+      "template": "casualty_1",
+      "source": null
+    },
+    {
+      "name": "casualty_2",
+      "kind": "box",
+      "label": "casualty_2",
+      "pose": [
+        0.9,
+        0.7,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.08,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.98 0.32 0.02 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.055,
+      "friction": null,
+      "template": "casualty_2",
+      "source": null
+    },
+    {
+      "name": "hazard_1",
+      "kind": "box",
+      "label": "hazard_1",
+      "pose": [
+        0.11,
+        0.1,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.04,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.35 0.76 0.91 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.035,
+      "friction": null,
+      "template": "hazard_1",
+      "source": null
+    },
+    {
+      "name": "hazard_2",
+      "kind": "box",
+      "label": "hazard_2",
+      "pose": [
+        -1.15,
+        -0.85,
+        0.02,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.04,
+        "width": 0.04,
+        "height": 0.04
+      },
+      "color": "0.35 0.76 0.91 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.035,
+      "friction": null,
+      "template": "hazard_2",
+      "source": null
+    },
+    {
+      "name": "rescue_bot",
+      "kind": "robot",
+      "label": "救援小车",
+      "pose": [
+        1.35,
+        -1.35,
+        0.0,
+        0.0,
+        0.0,
+        3.14159265
+      ],
+      "params": {},
+      "color": "0.17 0.19 0.22 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.65,
+      "friction": null,
+      "template": "rescue_bot",
+      "source": null
+    }
+  ]
+}

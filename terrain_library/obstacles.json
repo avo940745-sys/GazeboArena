@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "name": "gazeboarena",
+  "length": 3.0,
+  "width": 3.0,
+  "physics_step": 0.001,
+  "description": "",
+  "objects": [
+    {
+      "name": "floor",
+      "kind": "flat",
+      "label": "基础地面",
+      "pose": [
+        0.0,
+        0.0,
+        -0.015,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 3.0,
+        "width": 3.0,
+        "height": 0.03
+      },
+      "color": "0.90 0.90 0.88 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "ramp_1",
+      "kind": "ramp",
+      "label": "实体斜坡",
+      "pose": [
+        -0.7,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.4,
+        "width": 0.3,
+        "height": 0.06
+      },
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "stairs_1",
+      "kind": "stairs",
+      "label": "台阶",
+      "pose": [
+        0.5,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.5,
+        "width": 0.3,
+        "height": 0.02,
+        "count": 4
+      },
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "bump_1",
+      "kind": "bump",
+      "label": "减速带",
+      "pose": [
+        -0.6,
+        -0.2,
+        0.008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.018,
+        "height": 0.016
+      },
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "box_1",
+      "kind": "box",
+      "label": "箱体",
+      "pose": [
+        0.6,
+        -0.2,
+        0.05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 0.2,
+        "width": 0.2,
+        "height": 0.1
+      },
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "cylinder_1",
+      "kind": "cylinder",
+      "label": "圆柱",
+      "pose": [
+        0.8,
+        -0.7,
+        0.075,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "radius": 0.08,
+        "height": 0.15
+      },
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    },
+    {
+      "name": "rescue_bot",
+      "kind": "robot",
+      "label": "救援小车",
+      "pose": [
+        -1.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {},
+      "color": "0.22 0.55 0.90 1",
+      "collision": true,
+      "static": false,
+      "mass": 0.1,
+      "friction": null,
+      "template": "rescue_bot",
+      "source": null
+    }
+  ]
+}

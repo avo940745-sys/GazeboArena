@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "name": "gazeboarena",
+  "length": 3.0,
+  "width": 3.0,
+  "physics_step": 0.001,
+  "description": "",
+  "objects": [
+    {
+      "name": "floor",
+      "kind": "flat",
+      "label": "基础地面",
+      "pose": [
+        0.0,
+        0.0,
+        -0.015,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "params": {
+        "length": 3.0,
+        "width": 3.0,
+        "height": 0.03
+      },
+      "color": "0.90 0.90 0.88 1",
+      "collision": true,
+      "static": true,
+      "mass": 0.1,
+      "friction": null,
+      "template": null,
+      "source": null
+    }
+  ]
+}

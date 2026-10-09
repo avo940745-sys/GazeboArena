@@ -1,0 +1,6 @@
+include LICENSE NOTICE README.md README_en.md THIRD_PARTY_NOTICES.md CONTRIBUTING.md CHANGELOG.md install.sh install.ps1
+recursive-include docs *.md *.png
+recursive-include terrain_library *.json
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include .github *.yml
